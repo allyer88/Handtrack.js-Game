@@ -4,7 +4,7 @@
 
 */15
 - */5 Created a functional web app
-- */2 The ability to control the web app with basic gestures
+- 2/2 The ability to control the web app with basic gestures
 - */4 The ability to control the web app with at least two custom gestures
 - */2 Following good principles of UI design
 - */1 Creating a compelling app and application of gestures
@@ -15,7 +15,7 @@
 
 
 3. What online resources did you consult when completing this assignment? (list specific URLs)
-
+chatgpt
 
 
 4. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
@@ -30,9 +30,11 @@
 
 
 6. Did you design your app with a particular type of user in mind? If so, whom?
-
+We designed this app for kids to help them practice hand coordination.
 
 7. Describe the two custom gestures you created.
 
 
 8. How does your app implement or follow principles of good UI design?
+
+

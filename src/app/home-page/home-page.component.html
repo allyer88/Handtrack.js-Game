@@ -1,3 +1,45 @@
-<app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
+<div><p> Reminder: If you change the zoom or size of the web page, please refresh.</p></div>
+<div class="container">
+    <div class="game-container">
+        <h1 class="gamestopped" *ngIf = "isOver">Game Over</h1>
+        <h1 class="gamestopped" *ngIf = "isStopped">Game Stopped</h1>
+        <div class="score" >Score: {{ score }}</div>
+        <div class="player" #player></div>
+        <div class="circle" #circle></div>
+        <div class="danger" #danger1></div>
+        <div class="danger" #danger2></div>
+        <div class="danger" #danger3></div>
+        <div class="danger" #danger4></div>
+        <div class="danger" #danger5></div>
+    </div>
+    <div class="hand-gesture">
+        <app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
+        <div [innerHTML]="gesture"></div>
+        <div class="GameIntro">
+            <h2>How to play?</h2>
+            <p>Start the camera and show your hands to move the green square to 
+                touch the blue circle while avoiding the red triangle. 
+                Get the highest score possible!</p>
+            <div class="controlIntro">
+            <p>Move up: show two hands</p>
+            <p>Move down: show closed hands</p>
+            <p>Move right: show one hand</p>
+            <p>Move left: show one closed hands</p>
+            <p>Stop the Game: point your both hands up</p>
+            <p>Restart/Resume the Game: point your one hand up</p>
+            <!--TODO: Add two more custom gestures-->
+            <p><strong>Below controls are only when the game is stopped</strong></p>
+            <p>View Score records: </p>
+            <p>Close Score records: </p>
+            </div>
+        </div>
+            <div class="records" *ngIf="showRecords">
+                <h1> Your Score Records</h1>
+                <div *ngIf="scores.length==0">No records yet</div>
+                <div *ngFor="let s of scores; let i=index"><p>{{i+1}}. {{s}}</p></div>
+            </div>
+        
+    </div>
+    
+</div>
 
-<div [innerHTML]="gesture"></div>
