@@ -1,40 +1,20 @@
---Readme document for *author(s)*, *email(s)*, *UCI id(s)*--
+# Handtrack.js-Game
 
-1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
+Welcome to the Handtrack.js-Game project! This repository serves as the starter code for your Handtrack.js-based game. Follow the steps below to get started:
 
-*/15
-- */5 Created a functional web app
-- 2/2 The ability to control the web app with basic gestures
-- */4 The ability to control the web app with at least two custom gestures
-- */2 Following good principles of UI design
-- */1 Creating a compelling app and application of gestures
-- */1 A readme and demo video which explains how these features were implemented and their design rationale
+## Installation
 
-2. How long, in hours, did it take you to complete this assignment?
+To set up the project, first, ensure you have Node.js and npm installed on your machine. Then, run the following command to install the required modules:
 
+```bash
+npm install
+```
 
+##Usage
+Once you have installed the required modules, run the following command to launch the application and load up the basic user interface we have created to get you started:
 
-3. What online resources did you consult when completing this assignment? (list specific URLs)
-chatgpt
+```bash
+ng serve --open
+```
 
-
-4. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
-
-
-
-5. Is there anything special we need to know in order to run your code?
-
-
-
---Aim for no more than two sentences for each of the following questions.--
-
-
-6. Did you design your app with a particular type of user in mind? If so, whom?
-We designed this app for kids to help them practice hand coordination.
-
-7. Describe the two custom gestures you created.
-
-
-8. How does your app implement or follow principles of good UI design?
-
-
+This will start a development server and automatically open the basic user interface in your default web browser.
