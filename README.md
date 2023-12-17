@@ -25,3 +25,5 @@ ng serve --open
 ```
 
 This will start a development server and automatically open the basic user interface in your default web browser.
+
+The initial project code was produced by UC Irvine Inf 133
