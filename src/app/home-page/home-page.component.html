@@ -22,19 +22,18 @@
                 Get the highest score possible!</p>
             <div class="controlIntro">
             <p>Move up: show two hands</p>
-            <p>Move down: show closed hands</p>
+            <p>Move down: show two closed hands</p>
             <p>Move right: show one hand</p>
             <p>Move left: show one closed hands</p>
             <p>Stop the Game: point your both hands up</p>
             <p>Restart/Resume the Game: point your one hand up</p>
-            <!--TODO: Add two more custom gestures-->
             <p><strong>Below controls are only when the game is stopped</strong></p>
-            <p>View Score records: </p>
-            <p>Close Score records: </p>
+            <p>View Score records: Show one hand open and one hand point</p>
+            <p>Close Score records: Show one hand closed and one hand point</p>
             </div>
         </div>
             <div class="records" *ngIf="showRecords">
-                <h1> Your Score Records</h1>
+                <h1 class="scoretitle"> Your Score Records</h1>
                 <div *ngIf="scores.length==0">No records yet</div>
                 <div *ngFor="let s of scores; let i=index"><p>{{i+1}}. {{s}}</p></div>
             </div>

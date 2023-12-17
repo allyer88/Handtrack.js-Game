@@ -5,3 +5,19 @@
     width: 200px;
     height: 200px;
 }
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    border-radius: 10%;
+    padding: 2% 5% ;
+}
+.startbutton{
+    background-color: rgb(127, 255, 136);
+    margin-right: 5%;
+}
+.stopbutton{
+    background-color: rgb(255, 28, 73);
+}

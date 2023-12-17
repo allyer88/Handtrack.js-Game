@@ -60,7 +60,7 @@
     font-size: 30px;
 }
 .GameIntro{
-    width: 80%;
+    width: 85%;
     text-align: center;
 }
 .controlIntro{
@@ -80,4 +80,36 @@
     background-color: rgb(146, 255, 195);
     text-align: center;
     overflow: auto;
+}
+@media screen and (max-width: 850px) {
+    .container {
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center; 
+    }
+
+    .game-container {
+        width: 90%; 
+        height:60vh;
+        margin-bottom: 2%;
+    }
+
+    .hand-gesture {
+        width: 100%; 
+        left: 0;
+    }
+    .player, .circle{
+        width: 30px;
+        height: 30px;
+    }
+    .gamestopped{
+        font-size: 20px;
+    }
+    .records{
+        left:50%;
+        top: 35%;
+    }
+    .scoretitle{
+        font-size: 22px;
+    }
 }

@@ -20,7 +20,7 @@ export class HomePageComponent implements OnInit {
   dangerElements: ElementRef[] = [];
   score:number = 0;
   scores:number[]=[];
-  showRecords=false;
+  showRecords: boolean=false;
   //stop the game
   isStopped: boolean=false;
   //game is over
@@ -33,22 +33,28 @@ export class HomePageComponent implements OnInit {
     this.createDanger();
     this.score=0;
   }
+  restartGame(){
+    this.createRandomCircle();
+    this.createDanger();
+    this.score=0;
+  }
   prediction(event: PredictionEvent){
     this.gesture = event.getPrediction();
+    
     if(!this.isStopped && !this.isOver) this.playerMovement(event);
     if(this.isStopped || this.isOver) {
-      if(event.getPrediction()=="Hand Pointing") {
+      if(this.showRecords==false && event.getPrediction()=="Hand Pointing") {
         if(this.isStopped==true) {
           this.isStopped=false;
         }
         if(this.isOver==true){
           this.isOver=false;
-          this.ngOnInit();
+          this.restartGame();
         }
       }
-      //TODO: add two custom getures and uncomment
-      //else if(event.getPrediction()=="") this.openRecord();
-      //else if(event.getPrediction()=="") this.closeRecord();
+      // Handling custom gestures
+      if (this.gesture == "Open Hand and Point Hand") this.openRecord(); 
+      if (this.gesture == "Closed Hand and Point Hand") this.closeRecord();
     }
   }
   //When a prediction event occurs, the playerMovement method is called
@@ -63,10 +69,10 @@ export class HomePageComponent implements OnInit {
   }
   //View or close records
   openRecord(){
-    if(this.showRecords==false)this.showRecords=true;
+    this.showRecords=true;
   }
   closeRecord(){
-    if(this.showRecords==true)this.showRecords=false;
+    this.showRecords=false;
   }
   
   checkCollision(){
@@ -90,21 +96,24 @@ export class HomePageComponent implements OnInit {
         playerRect.bottom > dangerElement.nativeElement.getBoundingClientRect().top){
           this.isOver=true;
           this.scores.push(this.score);
+          console.log(this.scores.length);
+          return;
         }
       });
     //avoid player going over the border
-    const containerWidth = this.el.nativeElement.querySelector('.game-container').clientWidth;
-    const containerHeight = this.el.nativeElement.querySelector('.game-container').clientHeight;
-    if(playerRect.left<0){
+    const container = this.el.nativeElement.querySelector('.game-container');
+    const containerRect = container.getBoundingClientRect();
+
+    if(playerRect.left< containerRect.left){
       this.moveRight();
     }
-    if(playerRect.right>containerWidth-3){
+    if(playerRect.right> containerRect.right){
       this.moveLeft();
     }
-    if(playerRect.top<5){
+    if(playerRect.top<containerRect.top){
       this.moveDown();
     }
-    if(playerRect.bottom>containerHeight+5){
+    if(playerRect.bottom>containerRect.bottom){
       this.moveUp();
     }
   }
